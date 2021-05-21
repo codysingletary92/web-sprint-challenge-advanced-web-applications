@@ -1,4 +1,18 @@
 import axios from "axios";
 
+let data;
+
 //Task List:
 //Build and export a function used to send in our authorization token
+export const axiosWithAuth = () => {
+        return axios.create({
+            baseURL: "http://localhost:5000/api/colors",
+            headers: {
+                authorization: localStorage.getItem("token")
+            }
+        });
+    };
+    
+
+
+export default axiosWithAuth;

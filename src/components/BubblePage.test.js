@@ -4,6 +4,12 @@ import BubblePage from "./BubblePage";
 
 test("Renders BubblePage without errors", () => {
   // Finish this test
+  render(<BubblePage/>)
+  screen.debug()
+  const colors = screen.getByText(/colors/i)
+  const bubbles = screen.getByText(/bubbles/i)
+  expect(colors).toBeInTheDocument()
+  expect(bubbles).toBeInTheDocument()
 });
 
 test("Fetches data and renders the bubbles on mounting", () => {
